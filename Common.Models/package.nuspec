@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Common.Models</id>
+    <version>1.0.0</version>
+    <authors>Dmitry Valeev</authors>
+    <owners>https://github.com/valeev</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Common interfaces for DB</description>
+    <tags>common, interface, model, db</tags>
+    <dependencies>
+      <dependency id="EntityFramework" version="6.2.0" />
+    </dependencies>
+  </metadata>
+</package>
