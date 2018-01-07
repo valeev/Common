@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Common.Models</id>
+    <id>Valco.Common.Models</id>
     <version>1.0.0</version>
     <authors>Dmitry Valeev</authors>
-    <owners>https://github.com/valeev</owners>
+    <projectUrl>https://github.com/valeev/Common</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Common interfaces for DB</description>
     <tags>common, interface, model, db</tags>
