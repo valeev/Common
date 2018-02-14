@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Valco.Common.Contracts.WCF</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Dmitry Valeev</authors>
     <projectUrl>https://github.com/valeev/Common</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
