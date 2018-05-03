@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Valco.Common.Core.Contracts</id>
+    <version>1.0.0</version>
+    <authors>Dmitry Valeev</authors>
+    <projectUrl>https://github.com/valeev/Common</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Common interfaces for contracts</description>
+    <tags>common, interface, utilities, core, .net core</tags>
+  </metadata>
+</package>
