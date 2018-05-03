@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PackageId>Valco.Common.Core.Contracts</PackageId>
+    <Authors>Dmitry Valeev</Authors>
+    <Company>Valco</Company>
+    <PackageProjectUrl>https://github.com/valeev/Common</PackageProjectUrl>
+    <Product>Valco.Common.Core.Contracts</Product>
+    <Description>Common interfaces for contracts</Description>
+    <PackageTags>common, interface, utilities, core, .net core</PackageTags>
   </PropertyGroup>
 
 </Project>

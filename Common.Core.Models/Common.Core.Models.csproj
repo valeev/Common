@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PackageId>Valco.Common.Core.Models</PackageId>
+    <Company>Valco</Company>
+    <Authors>Dmitry Valeev</Authors>
+    <Description>Common interfaces for DB</Description>
+    <PackageTags>common, interface, model, db, core, .net core</PackageTags>
+    <PackageProjectUrl>https://github.com/valeev/Common</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
