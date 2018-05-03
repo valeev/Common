@@ -8,5 +8,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Common interfaces for contracts</description>
     <tags>common, interface, utilities, core, .net core</tags>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.0" />
+    </dependencies>
   </metadata>
 </package>

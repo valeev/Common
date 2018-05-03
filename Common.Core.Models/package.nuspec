@@ -9,7 +9,9 @@
     <description>Common interfaces for DB</description>
     <tags>common, interface, model, db, core, .net core</tags>
     <dependencies>
-      <dependency id="Microsoft.EntityFrameworkCore" version="2.0.2" />
+      <group targetFramework=".NETCoreApp2.0">
+        <dependency id="Microsoft.EntityFrameworkCore" version="2.0.2" exclude="Build,Analyzers" />
+      </group>
     </dependencies>
   </metadata>
 </package>
