@@ -9,7 +9,7 @@
     <Product>Valco.Common.Core.Contracts</Product>
     <Description>Common interfaces for contracts</Description>
     <PackageTags>common, interface, utilities, core, .net core</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
 </Project>
