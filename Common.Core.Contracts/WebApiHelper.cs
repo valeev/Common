@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace Common.Contracts
+﻿namespace Common.Contracts
 {
     /// <summary>
     /// Http helper
@@ -13,22 +11,32 @@ namespace Common.Contracts
         /// <param name="serviceStatus">Service status</param>
         /// <param name="errorCode">Error code</param>
         /// <returns></returns>
-        public static HttpStatusCode GetHttpStatusCodeFromServiceStatus(ServiceStatus serviceStatus, string errorCode)
+        public static int GetHttpStatusCodeFromServiceStatus(ServiceStatus serviceStatus, string errorCode)
         {
             switch (serviceStatus)
             {
                 case ServiceStatus.Success:
-                    return HttpStatusCode.OK;
+                    if (errorCode.ToLower() == "created")
+                    {
+                        return 201;
+                    }
+                    if (errorCode.ToLower() == "accepted")
+                    {
+                        return 202;
+                    }
+                    return 200;
                 case ServiceStatus.ServiceError:
                     if (errorCode == "notFound")
                     {
-                        return HttpStatusCode.NotFound;
+                        return 422;
                     }
-                    return HttpStatusCode.InternalServerError;
+                    return 500;
                 case ServiceStatus.NotAuthorized:
-                    return HttpStatusCode.Unauthorized;
+                    return 401;
+                case ServiceStatus.InvalidParameters:
+                    return 422;
                 default:
-                    return HttpStatusCode.InternalServerError;
+                    return 500;
             }
         }
     }
