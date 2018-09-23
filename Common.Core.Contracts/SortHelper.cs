@@ -1,6 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
+using System.Linq.Expressions;
 
 namespace Common.Core.Contracts
 {
@@ -27,17 +28,13 @@ namespace Common.Core.Contracts
             {
                 return records;
             }
-            if (sortingArray.Length == 1 || sortingArray[1].ToLower() == "asc")
+            if (sortingArray.Length == 1 || (sortingArray.Length == 2 && sortingArray[1].ToLower() == "asc"))
             {
-                records = (from r in records
-                           orderby GetDynamicSortProperty(r, sortingArray[0].ToLower()) ascending
-                           select r).AsQueryable();
+                records = records.OrderBy(ToLambda<T>(sortingArray[0].ToLower()));
             }
-            else if (sortingArray.Length == 2 || sortingArray[1].ToLower() == "desc")
+            else if (sortingArray.Length == 2 && sortingArray[1].ToLower() == "desc")
             {
-                records = (from r in records
-                           orderby GetDynamicSortProperty(r, sortingArray[0].ToLower()) descending
-                           select r).AsQueryable();
+                records = records.OrderByDescending(ToLambda<T>(sortingArray[0].ToLower()));
             }
             return records;
         }
@@ -45,13 +42,18 @@ namespace Common.Core.Contracts
         #region Helpers
 
         /// <summary>
-        /// Get property
+        /// Lambda soring
         /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="propertyName"></param>
         /// <returns></returns>
-        private static object GetDynamicSortProperty(object record, string propName)
+        private static Expression<Func<T, object>> ToLambda<T>(string propertyName)
         {
-            //Use reflection to get order type
-            return record.GetType().GetProperty(propName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance).GetValue(record, null);
+            var parameter = Expression.Parameter(typeof(T));
+            var property = Expression.Property(parameter, propertyName);
+            var propAsObject = Expression.Convert(property, typeof(object));
+
+            return Expression.Lambda<Func<T, object>>(propAsObject, parameter);
         }
 
         #endregion
