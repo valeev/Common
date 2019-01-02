@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Valco.Common.WebApi</id>
+    <version>1.0.0</version>
+    <authors>Dmitry Valeev</authors>
+    <projectUrl>https://github.com/valeev/Common</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Helpers for WebApi</description>
+    <tags>common, utilities</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.7" />
+      <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.7" />
+      <dependency id="Newtonsoft.Json" version="12.0.1" />
+      <dependency id="NLog" version="4.5.11" />
+    </dependencies>
+  </metadata>
+</package>

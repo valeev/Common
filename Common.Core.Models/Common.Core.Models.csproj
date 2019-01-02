@@ -8,10 +8,7 @@
     <Description>Common interfaces for DB</Description>
     <PackageTags>common, interface, model, db, core, .net core</PackageTags>
     <PackageProjectUrl>https://github.com/valeev/Common</PackageProjectUrl>
+    <Version>1.1.0</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.2" />
-  </ItemGroup>
 
 </Project>

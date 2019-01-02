@@ -1,9 +1,9 @@
 ﻿namespace Common.Contracts
 {
     /// <summary>
-    /// Http helper
+    /// Http status helper
     /// </summary>
-    public static class WebApiHelper
+    public static class HttpStatusHelper
     {
         /// <summary>
         /// Get a normal http status from support service response
