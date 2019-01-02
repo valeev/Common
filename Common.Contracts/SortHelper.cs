@@ -29,11 +29,11 @@ namespace Common.Contracts
             }
             if (sortingArray.Length == 1 || (sortingArray.Length == 2 && sortingArray[1].ToLower() == "asc"))
             {
-                records = records.OrderBy(ToLambda<T>(sortingArray[0].ToLower()));
+                records = OrderingHelper(records, sortingArray[0].ToLower(), false);
             }
             else if (sortingArray.Length == 2 && sortingArray[1].ToLower() == "desc")
             {
-                records = records.OrderByDescending(ToLambda<T>(sortingArray[0].ToLower()));
+                records = OrderingHelper(records, sortingArray[0].ToLower(), true);
             }
             return records;
         }
@@ -41,18 +41,24 @@ namespace Common.Contracts
         #region Helpers
 
         /// <summary>
-        /// Lambda soring
+        /// Ordering helper
         /// </summary>
         /// <typeparam name="T"></typeparam>
+        /// <param name="records"></param>
         /// <param name="propertyName"></param>
+        /// <param name="descending"></param>
         /// <returns></returns>
-        private static Expression<Func<T, object>> ToLambda<T>(string propertyName)
+        private static IOrderedQueryable<T> OrderingHelper<T>(IQueryable<T> records, string propertyName, bool descending)
         {
-            var parameter = Expression.Parameter(typeof(T));
-            var property = Expression.Property(parameter, propertyName);
-            var propAsObject = Expression.Convert(property, typeof(object));
-
-            return Expression.Lambda<Func<T, object>>(propAsObject, parameter);
+            var param = Expression.Parameter(typeof(T), string.Empty);
+            var property = Expression.PropertyOrField(param, propertyName);
+            var sort = Expression.Lambda(property, param);
+            var call = Expression.Call(
+                typeof(Queryable), "OrderBy" + (descending ? "Descending" : string.Empty),
+                new[] { typeof(T), property.Type },
+                records.Expression,
+                Expression.Quote(sort));
+            return (IOrderedQueryable<T>)records.Provider.CreateQuery<T>(call);
         }
 
         #endregion
