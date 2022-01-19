@@ -1,14 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
     <PackageId>Valco.Common.Core.Models</PackageId>
     <Company>Valco</Company>
     <Authors>Dmitry Valeev</Authors>
     <Description>Common interfaces for DB</Description>
     <PackageTags>common, interface, model, db, core, .net core</PackageTags>
     <PackageProjectUrl>https://github.com/valeev/Common</PackageProjectUrl>
-    <Version>1.1.0</Version>
+    <Version>2.0.1</Version>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
 </Project>

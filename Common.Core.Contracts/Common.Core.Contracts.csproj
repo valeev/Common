@@ -1,7 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
     <PackageId>Valco.Common.Core.Contracts</PackageId>
     <Authors>Dmitry Valeev</Authors>
     <Company>Valco</Company>
@@ -9,8 +12,8 @@
     <Product>Valco.Common.Core.Contracts</Product>
     <Description>Common interfaces for contracts</Description>
     <PackageTags>common, interface, utilities, core, .net core</PackageTags>
-    <Version>1.2.0</Version>
-    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <Version>2.0.1</Version>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
 </Project>
